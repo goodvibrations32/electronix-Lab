@@ -14,7 +14,7 @@
 Μετρήσεις Θεωριτικής επίλυσης κυκλώματος
 
 Kirchhoff's \(1_s_t\) law
-\[\sum_{n=1}^{n} I_n = 0 \rightarrow \vec{I_1} +\vec I_2 +\vec I_3 +\vec I_4 = 0\]
+\[\sum_{n=1}^{n} I_n = 0 \Rightarrow \vec{I_1} +\vec I_2 +\vec I_3 +\vec I_4 = 0\]
 
 Kirchhoff's \(2_n_d\) law
 

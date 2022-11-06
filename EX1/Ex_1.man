@@ -1,0 +1,71 @@
+.TH "Μέτρηση Ωμικής Αντίστασης, ρεύματος και τάσης" "1" 
+.SH "Άσκηση 1"
+.PP
+Δίνεται κύκλωμα όπου R1=1 kΩ, R2=1.5 kΩ, R3=680 Ω, R4=220 Ω
+
+.PP
+Μετρήσεις Εργαστηριακής εγκατάστασης
+.TS
+ center,box;
+
+r r r r r r r r .
+Vr1	Vr2	Vr3	Vr4	I1	I2	I3	I4
+7.63	4.36	3.3	1.69	7.83	2.96	4.91	4.91
+.TE
+.TB ""
+
+.PP
+Μετρήσεις Tinkercad
+.TS
+ center,box;
+
+r r r r r r r r .
+Vr1	Vr2	Vr3	Vr4	I1	I2	I3	I4
+7.68	4.32	3.26	1.06	7.68	2.88	4.80	4.80
+.TE
+.TB ""
+
+.PP
+Μετρήσεις Θεωριτικής επίλυσης κυκλώματος
+.TS
+ center,box;
+
+l l l l l l l l .
+Vr1	Vr2	Vr3	Vr4	I1	I2	I3	I4
+.TE
+.TB ""
+
+
+.SH "Άσκηση 2"
+.PP
+Δίνεται κύκλωμα όπου R1=1 kΩ, R2=1.5 kΩ, R3=680 Ω, R4=220 Ω, R5=1 kΩ, R6=1 kΩ
+
+.PP
+Μετρήσεις Εργαστηριακής εγκατάστασης
+.TS
+ center,box;
+
+l l l l l l l l l l l l .
+Vr1	Vr2	Vr3	Vr4	Vr5	Vr6	I1	I2	I3	I6	I5	I6
+.TE
+.TB ""
+
+.PP
+Μετρήσεις Tinkercad
+.TS
+ center,box;
+
+l l l l l l l l l l l l .
+Vr1	Vr2	Vr3	Vr4	Vr5	Vr6	I1	I2	I3	I6	I5	I6
+.TE
+.TB ""
+
+.PP
+Μετρήσεις Θεωριτικής επίλυσης κυκλώματος
+.TS
+ center,box;
+
+l l l l l l l l l l l l .
+Vr1	Vr2	Vr3	Vr4	Vr5	Vr6	I1	I2	I3	I6	I5	I6
+.TE
+.TB ""

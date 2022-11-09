@@ -63,7 +63,7 @@ Kirchhoff's \(2_n_d\) law
 | Vr1 | Vr2 | Vr3 | Vr4 | I1 | I2 | I3 | I4 |
 |     |     |     |     |    |    |    |    |
 
-* example
+
 Kirchhoff's \(2_n_d\) law
 
 \begin{equation}
@@ -75,6 +75,7 @@ Kirchhoff's \(2_n_d\) law
 \end{equation}
 * Άσκηση 2
 Δίνεται κύκλωμα όπου R1=1 kΩ, R2=1.5 kΩ, R3=680 Ω, R4=220 Ω, R5=1 kΩ, R6=1 kΩ
+
 
 [[file:~/Documents/univercity/electronics/Lab/EX1/EX_1_2_electronix.png][circuit]]
 

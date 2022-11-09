@@ -1,5 +1,6 @@
 #+TITLE: Μέτρηση Ωμικής Αντίστασης, ρεύματος και τάσης
 #+AUTHOR: Τοροσιάν Νικόλας ΤΜ6220
+
 * Άσκηση 1
 Δίνεται κύκλωμα όπου R1=1 kΩ, R2=1.5 kΩ, R3=680 Ω, R4=220 Ω
 
@@ -13,19 +14,65 @@
 |  Vr1 |  Vr2 |  Vr3 |  Vr4 |   I1 |   I2 |   I3 |   I4 |
 | 7.68 | 4.32 | 3.26 | 1.06 | 7.68 | 2.88 | 4.80 | 4.80 |
 
-Μετρήσεις Θεωριτικής επίλυσης κυκλώματος
+** Κόμβος Α
+Kirchhoff's \(1_s_t\) law
+
+\begin{equation}
+\begin{align}
+            \sum_{n=1}^{n} \vec{I_n} = 0 \Rightarrow \\
+            & \vec{I_1} +\vec I_2 +\vec I_3  = 0 \Rightarrow \\
+            & I_1 - I_2 - I_3 = 0 \Rightarrow \\
+            & I_1 = I_2 + I_3
+\end{align}
+\end{equation}
+** Κόμβος Β
 
 Kirchhoff's \(1_s_t\) law
-\[\sum_{n=1}^{n} \vec{I_n} = 0 \Rightarrow \vec{I_1} +\vec I_2 +\vec I_3 +\vec I_4 = 0\]
 
+\begin{equation}
+\begin{align}
+\sum_{n=1}^{n} \vec{I_n} = 0 \Rightarrow \\
+& \vec{I_2} +\vec I_4 +\vec I  = 0 \Rightarrow \\
+& I_2 + I_4 - I = 0
+\end{align}
+\end{equation}
+
+
+** Βρόχος 1
 Kirchhoff's \(2_n_d\) law
 
-\[\sum_{n=1}^{n} \vec{V}_n = 0 \Rightarrow \vec{V}_{R_{1}} + \vec{V}_{R_{2}} + \vec{V}_{R_{3}}+ \vec{V}_{R_{4}} = 0\]
+\begin{equation}
+\begin{align}
+\sum_{n=1}^{n} \vec{V}_n = 0 \Rightarrow \\
+& \vec{V} + \vec{V}_{R_{1}} + \vec{V}_{R_{2}} +  = 0 \Rightarrow \\
+&  V_{PSU} - V_{R_{1}} - V_{R_{2}}=0
+\end{align}
+\end{equation}
 
+** Βρόχος 2
+Kirchhoff's \(2_n_d\) law
+\begin{equation}
+\begin{align}
+\sum_{n=1}^{n} \vec{V}_n = 0 \Rightarrow\\
+& \vec{V}_{R_{3}} + \vec{V}_{R_{4}}   = 0 \Rightarrow \\
+& V_{R_{2}} - V_{R_{3}} - V_{R_{4}}=0
+\end{align}
+\end{equation}
+
+Μετρήσεις Θεωριτικής επίλυσης κυκλώματος
 | Vr1 | Vr2 | Vr3 | Vr4 | I1 | I2 | I3 | I4 |
 |     |     |     |     |    |    |    |    |
 
+* example
+Kirchhoff's \(2_n_d\) law
 
+\begin{equation}
+\begin{align}
+\sum_{n=1}^{n} \vec{V}_n = 0 \Rightarrow \\
+& \vec{V}_{R_{1}} + \vec{V}_{R_{2}} + \vec{V}_{R_{3}}+ \vec{V}_{R_{4}} = 0 \Rightarrow \\
+& R_{1} \cdot \vec I_{1} + R_{2} \cdot \vec I_{2} + R_{3} \cdot \vec I_{3} + R_{4} \cdot \vec I_{4} = 0
+\end{align}
+\end{equation}
 * Άσκηση 2
 Δίνεται κύκλωμα όπου R1=1 kΩ, R2=1.5 kΩ, R3=680 Ω, R4=220 Ω, R5=1 kΩ, R6=1 kΩ
 

@@ -44,12 +44,13 @@ I_{tot} = I_{1} = 7,68 mA
 \end{equation}
 
 
-Apo Ohm
+Από τον νόμο του Ohm έχουμε ότι :
+
+
 \begin{equation}
 I_{2} = I_{1} \cdot R_{2,3,4} = I_{1} \cdot \frac{R_{2}\cdot(R_{3}+R_{4})}{R_{2}+R_{3}+R_{4}} = 7,68 mA \cdot \frac{1500 \cdot (680+220)}{1500+680+220} \left[ \frac{\Omega}{\Omega} \right] = 7,68 \cdot 10^{-3} \cdot \frac{1,5 \cdot (0,68+0,22)}{1,5+0,68+0,22} \frac{10^{3}}{10^{3}} = 2,88 mA
 \end{equation}
 
-** Κόμβος Α
 Kirchhoff's \(1_s_t\) law
 
 \begin{equation}
@@ -91,6 +92,84 @@ CLOCK: [2022-11-13 Κυρ 13:31]--[2022-11-13 Κυρ 13:56] =>  0:25
 :END:
 Δίνεται κύκλωμα όπου R1=1 kΩ, R2=1.5 kΩ, R3=680 Ω, R4=220 Ω, R5=1 kΩ, R6=1 kΩ
 
+Αρχικά υπολογίζουμε το ισοδύναμο κύκλωμα που αποτελείται από μία αντίσταση αντίστοιχα με παραπάνω :
+
+\begin{equation}
+\begin{align}
+
+R_{3} \parallel R_{4} \Rightarrow R_{3,4} = \frac{R_3 \cdot R_4}{R_3 + R_4} = \frac{0,68 \cdot 0,22}{0,68+0,22} [\right k\Omega \left] =0,17 [\right k\Omega \left]
+\end{align}
+\end{equation}
+
+\begin{equation}
+\begin{align}
+
+R_{3,4} \not \parallel R_5 \Rightarrow R_{3,4,5} = R_{3,4} + R_{5} = 0,17 [\right k \Omega \left] + 1 [\right k \Omega \left] = 1,17 [\right k \Omega \left]
+\end{align}
+\end{equation}
+\begin{equation}
+\begin{align}
+
+R_{3,4,5} \parallel R_{2} \Rightarrow R_{2,3,4,5} = \frac{R_{3,4,5} \cdot R_2}{R_{3,4,5} + R_2} = \frac{1,17 \cdot 1,5}{1,17+1,5} [\right k\Omega \left] = 0,66 [\right k\Omega \left]
+\end{align}
+\end{equation}
+
+\begin{equation}
+R_{1} \not \parallel R_{2,3,4,5} \not \parallel R_{6} \Rightarrow R_{tot} = R_{1} + R_{2,3,4,5} + R_{6} = 2,66 [\right k \Omega \left]
+\end{equation}
+
+
+Από τον νόμο του Ohm έχουμε ότι :
+
+\begin{equation}
+I_{tot}= \frac{V_{psu}}{R_{tot}} = \frac{15V}{2,66 \times 10^{3} \Omega} = 5,64 \times 10^{-3} A = 5,64 mA
+\end{equation}
+
+
+Από τον νόμο των ρευμάτων προκύπτουν τα εξής :
+
+\begin{equation}
+I_{tot} = I_{1} = 5,64 mA
+\end{equation}
+
+\begin{equation}
+I_{2}= I_{1} \cdot \frac{R_{3,4}+R_{5}}{R_{3,4}+R_{5}+R_{2}} = 5,64 mA \cdot \frac{0,17+1}{0,17+1+1,5} = 5,64 mA \cdot 0,43 = 2,47 mA
+\end{equation}
+
+\begin{equation}
+I_{3,4} = I_{1}-I_{2} = 5,64-2,47 mA = 3,17 mA
+\end{equation}
+
+\begin{equation}
+I_{3}= I_{3,4} \cdot \frac{R_{4}}{R_{3}+R_{4}} = 3,17 \cdot \frac{0,22}{0,22+0,68} = 0,774 mA
+\end{equation}
+
+\begin{equation}
+I_{4} = I_{3,4} - I_{3} = 3,17 mA - 0,774 mA = 2,40 mA
+\end{equation}
+
+\begin{equation}
+I_{5} = I_{3,4} = 3,17 mA
+\end{equation}
+
+\begin{equation}
+I_{6} = I_{2} + I_{5} = 2,47 mA + 3,17 mA = 5,64 mA
+\end{equation}
+
+
+Έτσι από τον νόμο του  θα έχουμε :
+
+\begin{equation}
+\begin{align}
+& V_{1}= I_{1} \cdot R_{1} = 5,64 mA \cdot 1 k \Omega = 5,64 V \\
+& V_{2}= I_{2} \cdot R_{2} = 2,47 mA \cdot 1,5 k \Omega = 3,7 V \\
+& V_{3}= I_{3} \cdot R_{3} = 0,774 mA \cdot 0,68 k \Omega = 0,526 V\\
+& V_{4}= I_{4} \cdot R_{4} = 2,40 mA \cdot 0,22 k \Omega = 0,528 V \\
+& V_{5}= I_{5} \cdot R_{5} = 3,17 mA \cdot 1 k \Omega = 3,17 V \\
+& V_{6}= I_{6} \cdot R_{6} = 5,64 mA \cdot 1 k \Omega = 5,64 V \\
+\end{align}
+\end{equation}
+
 
 [[file:~/Documents/univercity/electronics/Lab/EX1/EX_1_2_electronix.png][circuit]]
 
@@ -103,5 +182,5 @@ CLOCK: [2022-11-13 Κυρ 13:31]--[2022-11-13 Κυρ 13:56] =>  0:25
 |    5.65 |    3.71 |    0.53 |    0.53 |    3.18 |    5.65 |    5.65 |    2.47 |    0.77 |     2.4 |    3.18 |    5.65 |
 
 Μετρήσεις Θεωριτικής επίλυσης κυκλώματος
-| Vr1 | Vr2 | Vr3 | Vr4 | Vr5 | Vr6 | I1 | I2 | I3 | I6 | I5 | I6 |
-|     |     |     |     |     |     |    |    |    |    |    |    |
+| Vr1 [V] | Vr2 [V] | Vr3 [V] | Vr4 [V] | Vr5 [V] | Vr6 [V] | I1 [mA] | I2 [mA] | I3 [mA] | I4 [mA] | I5 [mA] | I6 [mA] |
+| 5,64    | 3,7     | 0,526   | 0,528   | 3,17    | 5,64    | 5,64    | 2,47    | 0,774   | 2,40    | 3,17    | 5,64    |

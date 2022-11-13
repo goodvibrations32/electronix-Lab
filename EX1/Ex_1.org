@@ -2,17 +2,52 @@
 #+AUTHOR: Τοροσιάν Νικόλας ΤΜ6220
 
 * Άσκηση 1
+:LOGBOOK:
+CLOCK: [2022-11-13 Κυρ 13:01]--[2022-11-13 Κυρ 13:26] =>  0:25
+:END:
 Δίνεται κύκλωμα όπου R1=1 kΩ, R2=1.5 kΩ, R3=680 Ω, R4=220 Ω
 
 [[file:~/Documents/univercity/electronics/Lab/EX1/EX_1_1_electronix.png][circuit]]
 
 Μετρήσεις Εργαστηριακής εγκατάστασης
-|  Vr1 |  Vr2 | Vr3 |  Vr4 |   I1 |   I2 |   I3 |   I4 |
-| 7.63 | 4.36 | 3.3 | 1.69 | 7.83 | 2.96 | 4.91 | 4.91 |
+| Vr1 [V] | Vr2 [V] | Vr3 [V] | Vr4 [V] | I1 [mA] | I2 [mA] | I3 [mA] | I4 [mA] |
+|    7.63 |    4.36 |     3.3 |    1.69 |    7.83 |    2.96 |    4.91 |    4.91 |
 
 Μετρήσεις Tinkercad
-|  Vr1 |  Vr2 |  Vr3 |  Vr4 |   I1 |   I2 |   I3 |   I4 |
-| 7.68 | 4.32 | 3.26 | 1.06 | 7.68 | 2.88 | 4.80 | 4.80 |
+| Vr1 [V] | Vr2 [V] | Vr3 [V] | Vr4 [V] | I1 [mA] | I2 [mA] | I3 [mA] | I4 [mA] |
+|    7.68 |    4.32 |    3.26 |    1.06 |    7.68 |    2.88 |    4.80 |    4.80 |
+
+** Κύκλωμα 1
+Έχουμε ότι το κύκλωμα μπορεί να εκφραστεί με μία συνολική αντίσταση ως εξής:
+
+\begin{equation}
+\begin{align}
+R_{3,4} = R_{3} + R_{4} = 900 [\right\Omega\left] \\
+R_{2,3,4} = \frac{R_{2} \cdot R_{3,4}}{R_{2}+R_{3,4}} = 562,5 [\right\Omega\left] \\
+R_{tot} = R_{1} + R_{2,3,4} \\
+R_{tot}= 1 [\right k\Omega\left] + 0,562 [\right k\Omega\left] = 1,562 [\right k\Omega\left] \\
+\end{align}
+\end{equation}
+
+Το συνολικό ρεύμα που διαρρέει την παραπάνω αντίσταση θα είναι :
+
+\begin{equation}
+\begin{align}
+I_{tot} = \frac{V_{PSU}}{R_{tot}} = \frac{12V}{1562 \Omega} = 7,68 m A
+\end{align}
+\end{equation}
+
+Όμως το ρεύμα που διαρρέει την αντίσταση 1 ισούται με το ολικό ρεύμα.
+
+\begin{equation}
+I_{tot} = I_{1} = 7,68 mA
+\end{equation}
+
+
+Apo Ohm
+\begin{equation}
+I_{2} = I_{1} \cdot R_{2,3,4} = I_{1} \cdot \frac{R_{2}\cdot(R_{3}+R_{4})}{R_{2}+R_{3}+R_{4}} = 7,68 mA \cdot \frac{1500 \cdot (680+220)}{1500+680+220} \left[ \frac{\Omega}{\Omega} \right] = 7,68 \cdot 10^{-3} \cdot \frac{1,5 \cdot (0,68+0,22)}{1,5+0,68+0,22} \frac{10^{3}}{10^{3}} = 2,88 mA
+\end{equation}
 
 ** Κόμβος Α
 Kirchhoff's \(1_s_t\) law
@@ -22,70 +57,50 @@ Kirchhoff's \(1_s_t\) law
             \sum_{n=1}^{n} \vec{I_n} = 0 \Rightarrow \\
             & \vec{I_1} +\vec I_2 +\vec I_3  = 0 \Rightarrow \\
             & I_1 - I_2 - I_3 = 0 \Rightarrow \\
-            & I_1 = I_2 + I_3
-\end{align}
-\end{equation}
-** Κόμβος Β
-
-Kirchhoff's \(1_s_t\) law
-
-\begin{equation}
-\begin{align}
-\sum_{n=1}^{n} \vec{I_n} = 0 \Rightarrow \\
-& \vec{I_2} +\vec I_4 +\vec I  = 0 \Rightarrow \\
-& I_2 + I_4 - I = 0
+            & I_3 = I_1 - I_2 \Rightarrow \\
+            & I_{3} = 7,68 mA - 2,88 mA = 4,80 mA
 \end{align}
 \end{equation}
 
-
-** Βρόχος 1
-Kirchhoff's \(2_n_d\) law
+Καθ=ι γνωρίζουμε ότι :
 
 \begin{equation}
-\begin{align}
-\sum_{n=1}^{n} \vec{V}_n = 0 \Rightarrow \\
-& \vec{V} + \vec{V}_{R_{1}} + \vec{V}_{R_{2}} +  = 0 \Rightarrow \\
-&  V_{PSU} - V_{R_{1}} - V_{R_{2}}=0
-\end{align}
+I_{3}=I_{4} = 4,80mA
 \end{equation}
 
-** Βρόχος 2
-Kirchhoff's \(2_n_d\) law
+
+Εφαρμόζοντας τον Νόμο του Ohm έχουμε ότι :
+
 \begin{equation}
 \begin{align}
-\sum_{n=1}^{n} \vec{V}_n = 0 \Rightarrow\\
-& \vec{V}_{R_{3}} + \vec{V}_{R_{4}}   = 0 \Rightarrow \\
-& V_{R_{2}} - V_{R_{3}} - V_{R_{4}}=0
+\\
+&V_{1}= I_{1}\cdod R_{1} = 7,68 \times 10^{-3} (A) \cdot 1 \times 10^{3} \Omega = 7,68 V\\
+&V_{2}= I_{2}\cdod R_{2} = 2,88 \times 10^{-3} (A) \cdot 1,5 \times 10^{3} \Omega = 4,32 V\\
+&V_{3}= I_{3}\cdod R_{3} = 4,80 \times 10^{-3} (A) \cdot 0,68 \times 10^{3} \Omega = 3,26 V\\
+&V_{4}= I_{4}\cdod R_{4} = 4,80 \times 10^{-3} (A) \cdot 0,22 \times 10^{3} \Omega = 1,056 V\\
 \end{align}
 \end{equation}
 
 Μετρήσεις Θεωριτικής επίλυσης κυκλώματος
-| Vr1 | Vr2 | Vr3 | Vr4 | I1 | I2 | I3 | I4 |
-|     |     |     |     |    |    |    |    |
-
-
-Kirchhoff's \(2_n_d\) law
-
-\begin{equation}
-\begin{align}
-\sum_{n=1}^{n} \vec{V}_n = 0 \Rightarrow \\
-& \vec{V}_{R_{1}} + \vec{V}_{R_{2}} + \vec{V}_{R_{3}}+ \vec{V}_{R_{4}} = 0 \Rightarrow \\
-& R_{1} \cdot \vec I_{1} + R_{2} \cdot \vec I_{2} + R_{3} \cdot \vec I_{3} + R_{4} \cdot \vec I_{4} = 0
-\end{align}
-\end{equation}
+| Vr1 [V] | Vr2 [V] | Vr3 [V] | Vr4 [V] | I1 [mA] | I2 [mA] | I3 [mA] | I4 [mA] |
+| 7,68    | 4,32    | 3,26    | 1,056   | 7,68    | 2,88    | 4,8     | 4,8     |
 * Άσκηση 2
+:LOGBOOK:
+CLOCK: [2022-11-13 Κυρ 14:06]--[2022-11-13 Κυρ 14:31] =>  0:25
+CLOCK: [2022-11-13 Κυρ 13:31]--[2022-11-13 Κυρ 13:56] =>  0:25
+:END:
 Δίνεται κύκλωμα όπου R1=1 kΩ, R2=1.5 kΩ, R3=680 Ω, R4=220 Ω, R5=1 kΩ, R6=1 kΩ
 
 
 [[file:~/Documents/univercity/electronics/Lab/EX1/EX_1_2_electronix.png][circuit]]
 
 Μετρήσεις Εργαστηριακής εγκατάστασης
-| Vr1 | Vr2 | Vr3 | Vr4 | Vr5 | Vr6 | I1 | I2 | I3 | I6 | I5 | I6 |
-|     |     |     |     |     |     |    |    |    |    |    |    |
+| Vr1 [V] | Vr2 [V] | Vr3 [V] | Vr4 [V] | Vr5 [V] | Vr6 [V] | I1 [mA] | I2 [mA] | I3 [mA] | I4 [mA] | I5 [mA] | I6 [mA] |
+|     5.6 |    3.75 |    0.53 |    0.53 |     3.2 |     5.6 |    5.75 |    2.53 |     0.8 |    2.44 |    3.23 |    5.76 |
 
 Μετρήσεις Tinkercad
-| Vr1 | Vr2 | Vr3 | Vr4 | Vr5 | Vr6 | I1 | I2 | I3 | I6 | I5 | I6 |
-|     |     |     |     |     |     |    |    |    |    |    |    |
+| Vr1 [V] | Vr2 [V] | Vr3 [V] | Vr4 [V] | Vr5 [V] | Vr6 [V] | I1 [mA] | I2 [mA] | I3 [mA] | I4 [mA] | I5 [mA] | I6 [mA] |
+|    5.65 |    3.71 |    0.53 |    0.53 |    3.18 |    5.65 |    5.65 |    2.47 |    0.77 |     2.4 |    3.18 |    5.65 |
 
 Μετρήσεις Θεωριτικής επίλυσης κυκλώματος
 | Vr1 | Vr2 | Vr3 | Vr4 | Vr5 | Vr6 | I1 | I2 | I3 | I6 | I5 | I6 |

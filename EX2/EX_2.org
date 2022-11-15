@@ -1,0 +1,8 @@
+#+TITLE: Askisi 16-11-22
+#+AUTHOR: Torosian Nikolas
+
+* Circuit 1
++ Voltage divider circuit
+  Potentiometer \(1k\Omega\)
+* Circuit 2
++ Current divider circuit

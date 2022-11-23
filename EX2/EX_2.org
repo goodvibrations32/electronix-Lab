@@ -1,5 +1,6 @@
-#+TITLE: Askisi 16-11-22
-#+AUTHOR: Torosian Nikolas
+#+TITLE: Εργαστηριακή Άσκηση 2
+#+SUBTITLE: Διαιρέτης Τάσης-Ρεύματος
+#+AUTHOR: Τοροσιάν Νικόλας ΤΜ6220
 
 * Circuit 1
 

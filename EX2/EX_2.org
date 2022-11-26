@@ -59,7 +59,7 @@ I_{tot} = \frac{V_{in}}{R_{tot}} = \frac{10 \left[V \right]}{1523 \left[\Omega \
 \begin{equation}
 \begin{align}
 &I_{2}=I_{l}= \frac{I_{tot}}{2} = 3,24 \times 10^{-3} \left[A\right] \\
-& V_{R_{2,l}} = I_{2} \times R_{eq} = 3,24 \times 10^{-3} \left[A\right] \cdot 1523 \left[\Omega\right] = 4,93 \left[V\right]
+& V_{R_{2}} = I_{2} \times R_{2} = 3,24 \times 10^{-3} \left[A\right] \cdot 1100 \left[\Omega\right] = 3,55 \left[V\right]
 \end{align}
 \end{equation}
 

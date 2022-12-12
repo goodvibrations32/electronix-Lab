@@ -2,6 +2,11 @@
 #+subtitle: Εργασία 3η
 #+author: Τοροσιάν Νικόλας ΤΜ6220
 
+#+OPTIONS: tags:t
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+EXCLUDE_TAGS: noexport
+#+TAGS:  noexport(n)
 * ΑΣΚΗΣΗ 1
 ** Εκφώνηση 1
 Δίδεται το παρακάτω κύκλωμα. Συνδέσετε την γεννήτρια στην είσοδο και ρυθμίσετε την για πλάτος
@@ -16,6 +21,7 @@
 σύνδεσμο, αρκεί να μετρηθούν οι τιμές των τάσεων που διαρρέουν τις αντιστάσεις 3 και 5 καθώς
 και οι τιμές ενεργού και άεργου τάσεων της πηγής. Πρώτα θα μετρηθούν οι χαρακτηριστηκές
 τιμές της πηγής και μετά των αντιστάσεων.
+**** Υπολογισμός Τάσεων
 Υλοποιόντας τις κατάληλες μετρήσεις στο τινκερκαντ έχουμε ότι :
 + Τιμές πηγής
   | V(p-p)[V] | frequency[Hz] |
@@ -78,6 +84,28 @@ V_{p-p}^{R_{4}} = V_{p-p}^{R_{2}} = 1 [V] \\
 &V_{rms}^{R_{4}} = V_{rms}^{R_{2}} = 0.34 [V] \\
 \end{align}
 \end{equation}
+**** Υπολογισμός ρευμάτων
+Καθώς ισχύει ο νόμος του Ωμ μπορεί να υπολογιστεί η κάθε τιμή ενεργού και άεργου τιμής
+έντασης ώς εξής :
+
+\begin{equation}
+\begin{align}
+I_{rms}^{Rx} = \frac{V_{rms}^{Rx}}{R_{x}} \Rightarrow \\
+&I_{rms}^{R1} = 1.5 [A] \\
+&I_{rms}^{R2} = 0.34 [A] \\
+&I_{rms}^{R3} = 0.6 [A] \\
+&I_{rms}^{R4} = 0.5 [A] \\
+&I_{rms}^{R5} = 0.9 [A] \\
+\end{align}
+\end{equation}
+**** Πίνακας θεωρητικής επίλυσης
+| Resistor ID | R [Ω] | V (p-p)  [Volt] | V (rms)  [Volt] | I (rms)  [Amp] |
+|-------------+-------+-----------------+-----------------+----------------|
+| R1          |   1.5 |             6.4 |            2.26 |            1.5 |
+| R2          |     1 |               1 |            0.34 |           0.34 |
+| R3          |   2.2 |             3.6 |            1.27 |            0.6 |
+| R4          | 0.680 |               1 |            0.34 |            0.5 |
+| R5          |     1 |             2.6 |             0.9 |            0.9 |
 
 *** Εργαστηρικές μετρήσεις
 
@@ -91,8 +119,10 @@ V_{p-p}^{R_{4}} = V_{p-p}^{R_{2}} = 1 [V] \\
 #+TBLFM:$4=($3/@2$6);n3
 #+TBLFM:$5=($4/$2);n3
 *** Διαγράμματα Τάσης-χρόνου Έντασης-χρόνου
-Εδώ τα διαγράμματα θα πρέπει να εκδωθούν σε χρονικό διάστημα μιας περιόδου του σήματος.
+Εδώ τα διαγράμματα θα πρέπει να εκδωθούν σε χρονικό διάστημα μιας περιόδου του σήματος. Για
+όλα τα διαγράμματα παρέχεται ο κώδικας σε python που χρησιμοποιήθηκε για την παραγωγή τους.
 
+[[file:~/Documents/univercity/electronics/Lab/EX3/Διαγράμματα_Τάσης.png]]
 **** Κωδικας
 #+begin_src jupyter-python :session py :async yes :results raw drawer
 import matplotlib.pyplot as plt
@@ -102,6 +132,12 @@ time_period = 1/freq
 omega = 2*np.pi*freq
 #step the time to produce nice resolution
 t = np.arange(0, time_period, 0.00001)
+
+#PSU
+V_p_p = 10
+Vo = V_p_p /2
+V_r1 = Vo * np.cos(omega*t)
+plt.plot(t,V_r1, label='Πηγή Τάσης')
 
 #R1
 V_p_p = 6.35
@@ -128,23 +164,16 @@ plt.plot(t,V_r4, label='R4')
 V_p_p = 2.64
 Vo = V_p_p /2
 V_r5 = Vo * np.cos(omega*t)
+plt.title('Διαγράμματα Τάσης')
 plt.plot(t,V_r5, label='R5')
 plt.legend(loc='best')
 plt.grid('both')
 plt.ylabel('V(t) [Volts]')
 plt.xlabel('Time [seconds]')
+plt.savefig('Διαγράμματα_Τάσης.png')
 plt.show()
 #+end_src
 
-#+RESULTS:
-:results:
-[[file:./.ob-jupyter/9e17fd0dd073ec334b3be43030d2435571d96f57.png]]
-:end:
-
-
-#+begin_src jupyter-python :session py :async yes :results raw drawer
-
-#+end_src
 
 * ΑΣΚΗΣΗ 2
 ** Εκφώνηση 2
@@ -158,6 +187,8 @@ plt.show()
 σύνδεσμο, αρκεί να μετρηθούν οι τιμές των τάσεων που διαρρέουν τις αντιστάσεις 3 και 5 καθώς
 και οι τιμές ενεργού και άεργου τάσεων της πηγής. Πρώτα θα μετρηθούν οι χαρακτηριστηκές
 τιμές της πηγής και μετά των αντιστάσεων.
+
+**** Υπολογισμός Τάσεων
 Υλοποιόντας τις κατάληλες μετρήσεις στο τινκερκαντ έχουμε ότι :
 + Τιμές πηγής
   | V(p-p)[V] | frequency[Hz] |
@@ -216,9 +247,32 @@ V_{p-p}^{R_{4}} = V_{p-p}^{R_{3}} - V_{p-p}^{R_{5}} = 0.4 [V] \\
 \begin{equation}
 \begin{align}
 V_{p-p}^{R_{1}} = V_{p-p}^{R_{2}} - V_{p-p}^{R_{4}} = 4.4 [V] \\
-&V_{rms}^{R_{4}} =\frac{V_{p-p}^{R_{4}}}{2\sqrt(2)} = 1.55 [V] \\
+&V_{rms}^{R_{1}} =\frac{V_{p-p}^{R_{1}}}{2\sqrt(2)} = 1.55 [V] \\
 \end{align}
 \end{equation}
+
+**** Υπολογισμός ρευμάτων
+Καθώς ισχύει ο νόμος του Ωμ μπορεί να υπολογιστεί η κάθε τιμή ενεργού και άεργου τιμής
+έντασης ώς εξής :
+
+\begin{equation}
+\begin{align}
+I_{rms}^{Rx} = \frac{V_{rms}^{Rx}}{R_{x}} \Rightarrow \\
+&I_{rms}^{R1} = 1.03 [A] \\
+&I_{rms}^{R2} = 1.69 [A] \\
+&I_{rms}^{R3} = 0.90 [A] \\
+&I_{rms}^{R4} = 0.20 [A] \\
+&I_{rms}^{R5} = 1.84 [A] \\
+\end{align}
+\end{equation}
+**** Πίνακας θεωρητικής επίλυσης
+| Resistor ID | R [Ω] | V (p-p)  [Volt] | V (rms)  [Volt] | I (rms)  [Amp] |
+|-------------+-------+-----------------+-----------------+----------------|
+| R1          |   1.5 |             4.4 |            1.55 |           1.03 |
+| R2          |     1 |             4.8 |            1.69 |           1.69 |
+| R3          |   2.2 |             5.6 |            1.98 |            0.9 |
+| R4          | 0.680 |             0.4 |            0.14 |            0.2 |
+| R5          |     1 |             5.2 |            1.94 |           1.84 |
 
 *** Εργαστηριακές μετρήσεις
 
@@ -233,5 +287,65 @@ V_{p-p}^{R_{1}} = V_{p-p}^{R_{2}} - V_{p-p}^{R_{4}} = 4.4 [V] \\
 #+TBLFM: $5=($4/$2);n3
 #+TBLFM: $4=($3/2.82);n3
 
-* Notes
+*** Διαγράμματα Τάσης-χρόνου Έντασης-χρόνου
+Εδώ τα διαγράμματα θα πρέπει να εκδωθούν σε χρονικό διάστημα μιας περιόδου του σήματος.
+[[file:~/Documents/univercity/electronics/Lab/EX3/Διαγράμματα_Τάσης_2.png]]
+**** Κωδικας
+#+begin_src jupyter-python :session py :async yes :results raw drawer
+import matplotlib.pyplot as plt
+import numpy as np
+freq = 2000
+time_period = 1/freq
+omega = 2*np.pi*freq
+#step the time to produce nice resolution
+t = np.arange(0, time_period, 0.00001)
+
+#PSU
+V_p_p = 10
+Vo = V_p_p /2
+V_r1 = Vo * np.cos(omega*t)
+plt.plot(t,V_r1, label='Πηγή Τάσης')
+
+#R1
+V_p_p = 4.37
+Vo = V_p_p /2
+V_r1 = Vo * np.cos(omega*t)
+plt.plot(t,V_r1, label='R1')
+
+#R2
+V_p_p = 4.65
+Vo = V_p_p /2
+V_r2 = Vo * np.cos(omega*t)
+plt.plot(t,V_r2, label='R2')
+#R3
+V_p_p = 5.36
+Vo = V_p_p /2
+V_r3 = Vo * np.cos(omega*t)
+plt.plot(t,V_r3, label='R3')
+#R4
+V_p_p = 0.2
+Vo = V_p_p /2
+V_r4 = Vo * np.cos(omega*t)
+plt.plot(t,V_r4, label='R4')
+#R5
+V_p_p = 5.08
+Vo = V_p_p /2
+V_r5 = Vo * np.cos(omega*t)
+plt.title('Διαγράμματα Τάσης')
+plt.plot(t,V_r5, label='R5')
+plt.legend(loc='best')
+plt.grid('both')
+plt.ylabel('V(t) [Volts]')
+plt.xlabel('Time [seconds]')
+plt.savefig('Διαγράμματα_Τάσης_2.png')
+plt.show()
+#+end_src
+
+#+RESULTS:
+:results:
+[[file:./.ob-jupyter/68ce2eb63d062d0e09a799372bae9293a7d90ce4.png]]
+:end:
+
+
+* Notes :noexport:
 see notebook last pages

@@ -127,7 +127,7 @@ I_{rms}^{Rx} = \frac{V_{rms}^{Rx}}{R_{x}} \Rightarrow \\
 #+begin_src jupyter-python :session py :async yes :results raw drawer
 import matplotlib.pyplot as plt
 import numpy as np
-freq = 2000
+freq = 1500
 time_period = 1/freq
 omega = 2*np.pi*freq
 #step the time to produce nice resolution
@@ -173,6 +173,11 @@ plt.xlabel('Time [seconds]')
 plt.savefig('Διαγράμματα_Τάσης.png')
 plt.show()
 #+end_src
+
+#+RESULTS:
+:results:
+[[file:./.ob-jupyter/a1c88dc70d90018a7b41f7a008de2d518fd6b96f.png]]
+:end:
 
 
 * ΑΣΚΗΣΗ 2

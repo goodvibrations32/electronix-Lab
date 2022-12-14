@@ -43,7 +43,7 @@
 ZENER και συμπληρώσετε τον παρακάτω πίνακα.
 
 ** Circuit 
-[[file:~/Documents/univercity/electronics/Lab/EX4/ask2.png]]
+[[file:./ask2.png]]
 
 ** Εργαστηριακές μετρήσεις
 
@@ -69,7 +69,7 @@ ZENER και συμπληρώσετε τον παρακάτω πίνακα.
 τάση 𝐕𝐟 στα άκρα της ZENER και συμπληρώσετε τον παρακάτω πίνακα.
 
 ** Circuit 
-[[file:~/Documents/univercity/electronics/Lab/EX4/ask3.png]]
+[[file:./ask3.png]]
 ** Μετρήσεις εργαστηρίου
 
 |  Zener ID | anastrofi megali   Z1 |    Z1 | anastrofi polosi mikris    Z2 |    Z2 |

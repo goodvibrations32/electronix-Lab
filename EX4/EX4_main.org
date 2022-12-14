@@ -17,7 +17,7 @@
 την τάση στα άκρα της διόδου.
 ** Circuit 
 
-[[file:~/Documents/univercity/electronics/Lab/EX4/ask1.png]]
+[[file: Lab/EX4/ask1.png]]
 
 ** Εργαστηριακές μετρήσεις
 | I_f (mA) | V_f (mV) |

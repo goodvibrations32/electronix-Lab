@@ -20,7 +20,7 @@
 [[file:./ask1.png]]
 
 ** Εργαστηριακές μετρήσεις
-#+PLOT: title:"Ορθή πόλωση απλής διόδου Εργαστηριακές Μετρήσεις" ind:3 deps:(1) set:"xlabel 'Volts [V]'" set:"ylabel 'Current [mA]'"
+#+tblname: pol-diode
 | I_f (mA) | V_f (mV) | V_f (V) |
 |----------+----------+---------|
 |        1 |    591.6 |  0.5916 |
@@ -36,6 +36,24 @@
 |    18.05 |      729 |   0.729 |
 |    20.01 |      733 |   0.733 |
 #+TBLFM: $3 = $2/1000
+
+#+begin_src gnuplot :var data=pol-diode :file diode_1.png
+# Grid
+set style line 102 lc rgb'#808080' lt 0 lw 1
+set grid back ls 102
+
+set xlabel "Volts [V]"
+set ylabel "Current [mA]"
+set title "Ορθή πόλωση απλής διόδου"
+
+
+set xrange [0:2]
+set xtics 0,0.2,2
+set key bottom right
+
+plot data u 3:1 w l lw 2 title 'Απλή δίοδος'
+
+#+end_src
 * Άσκηση 2
 ** Ορθή πόλωση διόδου Zener
 Κατασκευάστε το παρακάτω κύκλωμα
@@ -47,8 +65,7 @@ ZENER και συμπληρώσετε τον παρακάτω πίνακα.
 [[file:./ask2.png]]
 
 ** Εργαστηριακές μετρήσεις
-
-#+PLOT: title:"Ορθή πόλωση διόδου Zener Εργαστηριακές Μετρήσεις" ind:2 deps:(1) set:"xlabel 'Volts [V]'" set:"ylabel 'Current [mA]'"
+#+tblname: pol-zener
 |     Z2 |    Z2 |
 |--------+-------|
 | I (mA) | V (V) |
@@ -65,6 +82,25 @@ ZENER και συμπληρώσετε τον παρακάτω πίνακα.
 |  16.04 |  0.83 |
 |  18.03 |  0.84 |
 |  20.01 |  0.84 |
+
+
+#+begin_src gnuplot :var data=pol-zener :file zener_1.png
+# Grid
+set style line 102 lc rgb'#808080' lt 0 lw 1
+set grid back ls 102
+
+set xlabel "Volts [V]"
+set ylabel "Current [mA]"
+set title "Ορθή πόλωση διόδου Zener"
+
+
+set xrange [0:2]
+set xtics 0,0.2,2
+set key bottom right
+
+plot data u 2:1 w l lw 2 title 'Zener δίοδος'
+
+#+end_src
 * Άσκηση 3
 ** Χαρακτηριστική καμπύλη ορθής πόλωσης διόδου Zener
 Κατασκευάστε το παρακάτω κύκλωμα με την 𝐑 𝟏 στα 15ΟΩ. Ρυθμίσετε το τροφοδοτικό ώστε στο
@@ -75,7 +111,7 @@ ZENER και συμπληρώσετε τον παρακάτω πίνακα.
 [[file:./ask3.png]]
 ** Μετρήσεις εργαστηρίου
 
-#+PLOT: title:"Ανάστροφη πόλωση διόδου Zener (4,7V) Εργαστηριακές Μετρήσεις" ind:5  deps:(4 2) set:"xlabel 'Volts [V]'" set:"ylabel 'Current [mA]'" set:"xrange [0:20]" set:"xtics 0,1,20" labels:Zener (6,1 V)
+#+tblname: lab-meas
 |  Zener ID | Zener (6,1 V)   Z1 |    Z1 | Zener (4,7 V)    Z2 |    Z2 |
 |-----------+--------------------+-------+---------------------+-------|
 | Volts PSU |             I (mA) | V (V) |              I (mA) | V (V) |
@@ -92,4 +128,21 @@ ZENER και συμπληρώσετε τον παρακάτω πίνακα.
 |        16 |               63.6 |  6.36 |                  71 |  5.15 |
 |        20 |               88.3 |  6.45 |                  96 |   5.2 |
 
-# #+PLOT: title:"Ανάστροφη πόλωση διόδου Zener (6,1V) Εργαστηριακές Μετρήσεις" ind:3 deps:(2) set:"xlabel 'Volts [V]'" set:"ylabel 'Current [mA]'" set:"xrange [0:20]" set:"xtics 0,1,20" labels:Zener (6,1 V)
+#+begin_src gnuplot :var data=lab-meas :file zener_rev_pol.png
+# Grid
+set style line 102 lc rgb'#808080' lt 0 lw 1
+set grid back ls 102
+
+set xlabel "Volts [V]"
+set ylabel "Current [mA]"
+set title "Ανάστροφη πόλωση διόδων Zener διαφορετικών τάσεων λειτουργίας"
+
+set xrange [0:20]
+set xtics 0,2,20
+set key bottom right
+
+plot data u 3:2 w l lw 3 title 'Zener diode (6.1 V)', \
+     data u 5:4 w l lw 2 title 'Zener diode (4.7 V)'
+
+#+end_src
+

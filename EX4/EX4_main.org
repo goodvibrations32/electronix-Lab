@@ -55,8 +55,49 @@ plot data u 3:1 w l lw 2 title 'Απλή δίοδος'
 
 #+end_src
 
+#+RESULTS:
+
 [[file:./diode_1.png]]
 
+** Μετρήσεις TinkerCad
+#+tblname: pol-diode-tinker
+| I_f (mA) | V_f (mV) | V_f (V) |
+|----------+----------+---------|
+|     1.09 |      700 |     0.7 |
+|     2.29 |      900 |     0.9 |
+|     3.55 |     1100 |     1.1 |
+|     4.19 |     1200 |     1.2 |
+|     6.12 |     1500 |     1.5 |
+|     8.08 |     1800 |     1.8 |
+|     10.0 |     2100 |     2.1 |
+|     12.0 |     2400 |     2.4 |
+|     14.0 |     2700 |     2.7 |
+|     16.0 |     3000 |       3 |
+|     17.9 |     3300 |     3.3 |
+|     19.9 |     3600 |     3.6 |
+#+TBLFM: $3 = $2/1000
+
+#+begin_src gnuplot :var data=pol-diode-tinker :file diode_1_tinker.png
+# Grid
+set style line 102 lc rgb'#808080' lt 0 lw 1
+set grid back ls 102
+
+set xlabel "Volts [V]"
+set ylabel "Current [mA]"
+set title "Ορθή πόλωση απλής διόδου (TinkerCad)"
+
+
+set xrange [0:10]
+set xtics 0,2,10
+set key bottom right
+
+plot data u 3:1 w l lw 2 title 'Απλή δίοδος'
+
+#+end_src
+
+#+RESULTS:
+
+file:./diode_1_tinker.png
 * Άσκηση 2
 ** Ορθή πόλωση διόδου Zener
 Κατασκευάστε το παρακάτω κύκλωμα

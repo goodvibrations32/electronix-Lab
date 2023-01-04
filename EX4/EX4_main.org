@@ -96,8 +96,12 @@ plot data u 3:1 w l lw 2 title 'Απλή δίοδος'
 #+end_src
 
 #+RESULTS:
+[[file:diode_1_tinker.png]]
 
-file:./diode_1_tinker.png
+[[file:./diode_1_tinker.png]]
+
+
+
 * Άσκηση 2
 ** Ορθή πόλωση διόδου Zener
 Κατασκευάστε το παρακάτω κύκλωμα
@@ -145,6 +149,9 @@ set key bottom right
 plot data u 2:1 w l lw 2 title 'Zener δίοδος'
 
 #+end_src
+
+#+RESULTS:
+[[file:zener_1.png]]
 
 
 [[file:./zener_1.png]]

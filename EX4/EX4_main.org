@@ -42,10 +42,10 @@
 |    20.01 |      733 |   0.733 |
 #+TBLFM: $3 = $2/1000
 
-*** Τρόπος εξαγωγής διαγραμμάτων
+** Τρόπος εξαγωγής διαγραμμάτων
 Εδώ για όλα τα διαγράμματα χρησιμοποιήθηκε το λογισμικό gnuplot καθώς προσφέρει πολλές δυνατότητες και είναι διαθέσιμο για εγκατάσταση σε όλα τα λειτουργικά συστήματα (Linux, MacOs, Windows).
 
-#+begin_src gnuplot :var data=pol-diode :file diode_1.png
+#+begin_src gnuplot :var data=pol-diode :exports code :file diode_1.png 
 # Grid
 set style line 102 lc rgb'#808080' lt 0 lw 1
 set grid back ls 102
@@ -64,6 +64,7 @@ plot data u 3:1 w l lw 2 title 'Απλή δίοδος'
 #+end_src
 
 #+RESULTS:
+[[file:./diode_1.png]]
 
 *** Διάγραμμα Τάσης-Έντασης διόδου σε ορθή πόλωση
 [[file:./diode_1.png]]
@@ -88,8 +89,8 @@ plot data u 3:1 w l lw 2 title 'Απλή δίοδος'
 |     19.9 |      612 |   0.612 |
 #+TBLFM: $3 = $2/1000
 
-*** Τρόπος εξαγωγής διαγραμμάτων
-#+begin_src gnuplot :var data=pol-diode-tinker :file diode_1_tinker.png
+*** Τρόπος εξαγωγής διαγραμμάτων 
+#+begin_src gnuplot :var data=pol-diode-tinker :exports code :file diode_1_tinker.png 
 # Grid
 set style line 102 lc rgb'#808080' lt 0 lw 1
 set grid back ls 102
@@ -108,7 +109,7 @@ plot data u 3:1 w l lw 2 title 'Απλή δίοδος'
 #+end_src
 
 #+RESULTS:
-[[file:diode_1_tinker.png]]
+[[file:./diode_1_tinker.png]]
 
 *** Διάγραμμα Τάσης-Έντασης διόδου Ζενερ σε ορθή πόλωση
 [[file:./diode_1_tinker.png]]
@@ -149,7 +150,7 @@ ZENER και συμπληρώσετε τον παρακάτω πίνακα.
 |  20.01 |  0.84 |
 
 *** Τρόπος εξαγωγής διαγραμμάτων
-#+begin_src gnuplot :var data=pol-zener :file zener_1.png
+#+begin_src gnuplot :var data=pol-zener :exports code :file zener_1.png 
 # Grid
 set style line 102 lc rgb'#808080' lt 0 lw 1
 set grid back ls 102
@@ -191,8 +192,8 @@ plot data u 2:1 w l lw 2 title 'Zener δίοδος'
 |   17.9 | 0.609 |
 |   19.9 | 0.612 |
 
-*** Τρόπος εξαγωγής διαγραμμάτων
-#+begin_src gnuplot :var data=pol-zener-tinker :file zener_1_tinker.png
+*** Τρόπος εξαγωγής διαγραμμάτων 
+#+begin_src gnuplot :var data=pol-zener-tinker :exports code :file zener_1_tinker.png 
 # Grid
 set style line 102 lc rgb'#808080' lt 0 lw 1
 set grid back ls 102
@@ -211,7 +212,7 @@ plot data u 2:1 w l lw 2 title 'Zener δίοδος'
 #+end_src
 
 #+RESULTS:
-[[file:zener_1_tinker.png]]
+[[file:./zener_1_tinker.png]]
 
 *** Διάγραμμα Τάσης-Έντασης διόδου Ζενερ σε ορθή πόλωση
 [[file:./zener_1_tinker.png]]
@@ -249,8 +250,8 @@ plot data u 2:1 w l lw 2 title 'Zener δίοδος'
 |        16 |               63.6 |  6.36 |                  71 |  5.15 |
 |        20 |               88.3 |  6.45 |                  96 |   5.2 |
 
-*** Τρόπος εξαγωγής διαγραμμάτων
-#+begin_src gnuplot :var data=lab-meas :file zener_rev_pol.png
+*** Τρόπος εξαγωγής διαγραμμάτων 
+#+begin_src gnuplot :var data=lab-meas :exports code :file zener_rev_pol.png 
 # Grid
 set style line 102 lc rgb'#808080' lt 0 lw 1
 set grid back ls 102
@@ -273,7 +274,7 @@ plot data u 3:2 w l lw 3 title 'Zener diode (6.1 V)', \
 
 ** Πείραμα στο TinkerCad
 
-*** WAIT Πίνακας μετρήσεων από το περιβάλλον προσομοίωσης
+*** Πίνακας μετρήσεων από το περιβάλλον προσομοίωσης
 #+tblname: lab-meas-tinker
 |  Zener ID | Zener (6,1 V)   Z1 |    Z1 | Zener (4,7 V)    Z2 |    Z2 |
 |-----------+--------------------+-------+---------------------+-------|
@@ -291,9 +292,9 @@ plot data u 3:2 w l lw 3 title 'Zener diode (6.1 V)', \
 |        16 |               47.5 |  8.87 |                54.4 |  7.85 |
 |        20 |                 68 |    10 |                73.8 |  8.93 |
 
-*** Τρόπος εξαγωγής διαγραμμάτων
+*** Τρόπος εξαγωγής διαγραμμάτων 
 
-#+begin_src gnuplot :var data=lab-meas-tinker :file zener_rev_pol_tinker.png
+#+begin_src gnuplot :var data=lab-meas-tinker :exports code :file zener_rev_pol_tinker.png 
 # Grid
 set style line 102 lc rgb'#808080' lt 0 lw 1
 set grid back ls 102
@@ -312,7 +313,7 @@ plot data u 3:2 w l lw 3 title 'Zener diode (6.1 V)', \
 #+end_src
 
 #+RESULTS:
-[[file:zener_rev_pol_tinker.png]]
+[[file:./zener_rev_pol_tinker.png]]
 
 *** Χαρακτηριστική καμπύλη ανάστροφης πόλωσης διόδων Ζενερ με διαφορετικές τάσης λειτουργίας
 [[file:./zener_rev_pol_tinker.png]]

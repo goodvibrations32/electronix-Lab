@@ -122,12 +122,12 @@ I_{rms}^{Rx} = \frac{V_{rms}^{Rx}}{R_{x}} \Rightarrow \\
 Εδώ τα διαγράμματα θα πρέπει να εκδωθούν σε χρονικό διάστημα μιας περιόδου του σήματος. Για
 όλα τα διαγράμματα παρέχεται ο κώδικας σε python που χρησιμοποιήθηκε για την παραγωγή τους.
 
-[[file:~/Documents/univercity/electronics/Lab/EX3/Διαγράμματα_Τάσης.png]]
+[[file:./Διαγράμματα_Τάσης.png]]
 **** Κωδικας
 #+begin_src jupyter-python :session py :async yes :results raw drawer
 import matplotlib.pyplot as plt
 import numpy as np
-freq = 2000
+freq = 1500
 time_period = 1/freq
 omega = 2*np.pi*freq
 #step the time to produce nice resolution
@@ -173,6 +173,11 @@ plt.xlabel('Time [seconds]')
 plt.savefig('Διαγράμματα_Τάσης.png')
 plt.show()
 #+end_src
+
+#+RESULTS:
+:results:
+[[file:./.ob-jupyter/a1c88dc70d90018a7b41f7a008de2d518fd6b96f.png]]
+:end:
 
 
 * ΑΣΚΗΣΗ 2
@@ -289,7 +294,7 @@ I_{rms}^{Rx} = \frac{V_{rms}^{Rx}}{R_{x}} \Rightarrow \\
 
 *** Διαγράμματα Τάσης-χρόνου Έντασης-χρόνου
 Εδώ τα διαγράμματα θα πρέπει να εκδωθούν σε χρονικό διάστημα μιας περιόδου του σήματος.
-[[file:~/Documents/univercity/electronics/Lab/EX3/Διαγράμματα_Τάσης_2.png]]
+[[file:./Διαγράμματα_Τάσης_2.png]]
 **** Κωδικας
 #+begin_src jupyter-python :session py :async yes :results raw drawer
 import matplotlib.pyplot as plt

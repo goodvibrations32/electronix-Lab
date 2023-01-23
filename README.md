@@ -4,5 +4,7 @@
 This is a repository for my Laboratory of electronics (university).
 
 ## Exercises hole semester
-### Devider circuit
-### 
+### Measuring an Ohm type resistor 
+### Divider circuit
+### Oscilloscope measurements for AC 
+### Simple diode and Zener diode 

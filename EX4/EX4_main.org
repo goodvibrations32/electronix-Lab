@@ -1,6 +1,18 @@
-#+title: Μελέτη απλής διόδου και Zener
+#+title: Μελέτη απλής διόδου και Ζενερ.
 #+subtitle: Εργασία 4η
 #+author: Τοροσιάν Νικόλας ΤΜ6220
+# The default La-TeX class is article,
+#+LATEX_CLASS: report
+
+# Options to modify the class. E.g. font size.
+#+LATEX_CLASS_OPTIONS: [breaklines=true]
+
+# Other La-TeX code that you'd need in the preamble, notably, using packages.
+#+LATEX_HEADER: \usepackage[margin=2cm]{geometry}
+#+LATEX_HEADER: \usepackage{setspace}
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage[LGR]{fontenc}
+#+LATEX_HEADER: \usepackage[greek,greek]{babel}
 
 #+OPTIONS: tags:t
 #+EXPORT_SELECT_TAGS: export
@@ -47,7 +59,7 @@
 
 *** Τρόπος εξαγωγής διαγραμμάτων
 Εδώ για όλα τα διαγράμματα χρησιμοποιήθηκε το λογισμικό gnuplot καθώς προσφέρει πολλές δυνατότητες και είναι διαθέσιμο για εγκατάσταση σε όλα τα λειτουργικά συστήματα (Linux, MacOs, Windows).
-
+\textenglish{
 #+begin_src gnuplot :var data=pol-diode :exports code :file diode_1.png 
 # Grid
 set style line 102 lc rgb'#808080' lt 0 lw 1
@@ -65,7 +77,7 @@ set key bottom right
 plot data u 3:1 w l lw 2 title 'Απλή δίοδος'
 
 #+end_src
-
+}
 #+RESULTS:
 [[file:./diode_1.png]]
 
@@ -173,6 +185,9 @@ set key bottom right
 plot data u 2:1 w l lw 2 title 'Zener δίοδος'
 
 #+end_src
+
+#+RESULTS:
+[[file:zener_1.png]]
 
 *** Διάγραμμα Τάσης-Έντασης διόδου Ζενερ σε ορθή πόλωση
 [[file:./zener_1.png]]

@@ -1,0 +1,47 @@
+#+title: Notes from reading the theory
+* AC basics
+** Voltage /V/
+\begin{equation}
+\begin{align}
+v(t) = V_{0} cos(\omega \cdot t + \phi)
+\end{align}
+\end{equation}
+
+[[file:./AC_vector_V_t.png]]
+** Current /I/
+
+\begin{equation}
+\begin{align}
+i(t) = I_{0} cos(\omega \cdot t + (\phi + \phi_{0})
+\end{align}
+\end{equation}
+** voltage and current in imaginary form
+
+\begin{equation}
+\begin{align}
+\vec{V}(t)&=v_{0} < (\omega \cdot t) \\
+\vec{I}(t)&=i_{0} < (\omega \cdot t + \phi_{0}) \\
+&=Ie^{j(\omega \cdot t + \phi_{0})} \\
+&=I_{0}\cos(\omega \cdot t + \phi_{0}) + jI_{0}\sin(\omega \cdot t + \phi_{0})
+\end{align}
+\end{equation}
+
+[[file:./AC_vectors_imaginary.png]]
+
+** time domain with RMS for reference
+- Για λογους ευκολίας καλό είναι να θυμάμαι την σχεση αυτή για πράξεις
+  - [ ] θα πρεπει να δω λιγο πραξεις απο τις διαλέξεις τα *χειρογραφα*
+
+
+  \begin{equation}
+  \begin{align}
+  v(t) &= V_{rms} \cdot \sqrt2 \cdot \cos(\omega \cdot t + \phi_{0}), \\
+  & where,\ v_{rms} \cdot \sqrt2= V_{0}
+  \end{align}
+  \end{equation}
+* samples
+** latex block
+\begin{equation
+\begin{align
+\end{align
+\end{equation
